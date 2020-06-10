@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>portfolio</title>
+	<meta name="viewport" content="width=device-width initial-state=1.0">
+	<meta name="keywords" content="portfolio of krishna bahadur ojha">
+	<link rel="icon" href="portfolio.png">
+</head>
+<style>
+	*{
+		margin: 0px;
+	}
+	.loading{
+		padding-top: 300px;
+		text-align: center;
+	}
+	.nav-zone{
+		padding: 10px;
+	}
+	.logo{
+		border-radius: 50px;
+		position: absolute;
+		margin-left: 5%;
+	}
+	nav{
+	margin-left: 30%
+
+	}
+	a:hover{
+		background-color: #ADD8E6;
+		border-radius: 5px;
+		color:white;
+	}
+	li{
+		display: inline;
+		padding-right: 20px;
+	}
+	.nav-link{
+		text-decoration: none;
+		font-size: 40px;
+		color: black;
+	}
+	.menu-icon{
+		display: none;
+	}
+	.about-section{
+		width: 100%;
+		height: 550px;
+		background-color: #00BFFF;
+		/*background:linear-gradient(220deg, #00BFFF 70%,#fff 0%);*/
+		border-top-right-radius: 125px;
+
+	}
+	.bio-info{
+		width: 30%;
+		padding:40px 20px 40px 0px;
+		text-align: center;
+		color:black;
+		position: absolute;
+	}
+	.bio-img{
+		border-radius: 10px;
+		opacity: 0.9;
+		height: 16rem;
+		width:50%;
+	}
+	.about-me{
+		width:30%;
+		height: 98%;
+		background-color: rgba(65,197,245,1.0);
+		border-radius: 100px;
+		margin-top: 5px;
+	}
+	.circle{
+		border-color: black;
+		height: 100px;
+		width: 100px;
+		border-radius: 50%;
+	}
+	 .about-section div {
+		display: inline-block;
+	}
+	.repo-box{
+		width:100%;
+		height: 350px;
+		background-color:rgba(52,222,245,0.4);
+		border-radius: 0px 40px 0px 40px;
+		overflow: auto;
+		box-shadow: 2px 2px 5px gray;
+	}
+	.my-repo-class{
+		color:black; 
+		text-align: left; 
+		margin-left: 10%;
+		padding-top: 20px;
+		padding-bottom: 20px;
+		font-size: 40px;
+	}
+	.git-repo{
+		text-align: center;
+		width: 50%;
+		margin-left: 15%;
+		font-size:25px;
+		color:white;
+		padding:10px;
+	}
+	.sub-bio{
+		font-size: 20px;
+		color:#565251;
+	}
+
+		.pagination {
+	  display: inline-block;
+	  padding-bottom: 5px;
+	  text-align: center;
+	}
+
+	.pagination a {
+	  color: black;
+	  float: left;
+	  padding: 8px 16px;
+	  text-decoration: none;
+	}
+
+.pagination a:hover:not(.active) {background-color: #ddd;}
+
+@media screen and (max-width: 1025px){
+	.about-section{
+			height: 900px;
+			align-items: center;
+	}
+	.about-me{
+		height: 500px;
+		width: 90%;
+		text-align: center;
+		margin-left: 5%
+	}
+	.about-section div{
+		display: block;
+
+	}
+	.bio-img{
+		width: 60%;
+
+	}
+	.bio-info{
+		width: 90%;
+	}
+	.git-repo{
+		width: 90%;
+		padding: 5px;
+		margin-left:5%;
+	}
+	.my-repo-class{
+		margin-left: 0%;
+		font-size: 20px;
+	}
+	.repo-box{
+		height: 180px;
+	}
+	.menu-icon{
+		display: block;
+		margin-left:70%;
+	}
+	nav li{
+		display: none;
+	}
+	.pagination a {
+	  width: 8px;
+	  height: 25px;
+	}
+}
+</style>
+<body>	
+		<div class="loading" id="loading-id">Loading...</div>
+		<div id="body-id" style="visibility: hidden;">
+			<div class="nav-zone">
+			<div>
+			<img class="logo" id="portfolio-logo" height="50", width="60">
+		</div>
+		
+		<div>
+			<nav>
+				<ul>
+					<li id="lid">
+						<a class="nav-link" href="#">Home</a>
+					</li>
+					<li id="lid">
+						<a class="nav-link" href="#">About</a>
+					</li>
+					<li id="lid">
+						<a class="nav-link" href="#">Page</a>
+					</li>
+					<li id="lid">
+						<a class="nav-link" href="#">Contact</a>
+					</li>
+				</ul>
+				<img height="50" width="50" class="menu-icon" onclick="showMenu()" src='https://img.icons8.com/ios/2x/menu-squared-2.png'/>
+			</nav>
+		</div>
+		</div>
+	<div class="about-section">
+		<div class="about-me">
+		<div class='bio-info'>
+		<img class="bio-img" id="profileImage">
+		<h1 id="nameid"></h1>
+		<p class="sub-bio" id="nicname"></p>
+		<p class="sub-bio" id="my-bio"></p>
+		<p class="sub-bio" id="my-location"></p>
+		<a href="https://github.com/krishnabojha" style="text-decoration-style: none; font-size: 20px">visit GitHub</a>
+	</div>	
+		</div>
+		<div class="git-repo">
+			<h2>
+				My Github Repositories:
+
+			</h2><br/>
+
+			<div class="repo-box">
+
+				<p id="my-repo" class="my-repo-class"></p>
+				
+			</div><br/>
+				<div class="pagination" id="pag-cla">
+				  <a id="pag_0" href="#" name="0" onclick="pegenation(this)">&laquo;</a>
+				  <a id="pag_1" href="#" name="1" onclick="pegenation(this)">1</a>
+				  <a id="pag_2" href="#" name="2" onclick="pegenation(this)">2</a>
+				  <a id="pag_3" href="#" name="3" onclick="pegenation(this)">3</a>
+				  <a id="pag_4" href="#" name="4" onclick="pegenation(this)">4</a>
+				  <a id="pag_5" href="#" name="5" onclick="pegenation(this)">5</a>
+				  <a id="pag_6" href="#" name="6" onclick="pegenation(this)">6</a>
+				  <a id="pag_7" href="#" name="6" onclick="pegenation(this)">&raquo;</a>
+				</div>
+		</div>
+	</div>
+		</div>
+
+</body>
+<script>
+	var count=0;
+	var number_of_repo=5;
+	var total_repo=0;
+	var repo=[];
+	var repo_field=document.getElementById("my-repo");
+
+// fetching all data from API start
+
+	fetch('https://api.github.com/users/krishnabojha')
+	.then(response=>response.json())
+	.then(function(data){
+		console.log(data)
+		document.getElementById("portfolio-logo").src=data['avatar_url']
+		document.getElementById("profileImage").src=data['avatar_url']
+		document.getElementById("nameid").textContent=data['name']
+		document.getElementById("nicname").textContent=data['login']
+		document.getElementById("my-bio").textContent=data['bio']
+		document.getElementById("my-location").textContent=data['location']
+	})
+	fetch('https://api.github.com/users/krishnabojha/repos')
+	.then(response=>response.json())
+	.then(function(repo_data){
+		total_repo=repo_data.length;
+		for(var i=0;i<total_repo;i++){
+			var temp=(i+1)+". "+repo_data[i]['name'];
+			repo.push(temp);
+			if(i<5){
+				printrepo(temp);
+			}
+			
+		}
+		document.getElementById('pag_1').style.cssText="background-color:#4CAF50; color:white; border-radius:10px;"
+
+	})
+
+// fetching all data from API end
+
+// pagenation section start
+
+	function pegenation(pag_data) {
+		var disp_repo=5;
+		c=document.getElementById('pag-cla').getElementsByTagName('a');
+		// console.log(c.length)
+		for(var b=0;b<c.length;b++){
+			document.getElementById("pag_"+b).style="";
+		}
+		document.getElementById(pag_data['id']).style.cssText="background-color:#4CAF50; color:white; border-radius:10px;"
+		// console.log(pag_data['name']);
+		if(pag_data['name']>=1){
+			count=0;
+			repo_field.innerHTML="";
+			count=(parseInt(pag_data["name"])-1)*number_of_repo
+			console.log(repo);
+			if((count+disp_repo)>=total_repo){
+				if(total_repo>=count){
+					disp_repo=(total_repo-count);
+				}
+				else{
+					count=total_repo;
+				}
+			}
+
+			for(var i=count;i<(count+disp_repo);i++){
+				if(repo[i]!=undefined){
+					printrepo(repo[i]);
+					// console.log(repo[i])
+				}
+				else{
+					if(i==(count+disp_repo-1)){
+					printrepo('No Repositories');
+				}
+				}
+			}
+
+		}
+
+	}
+
+// pagenation section ends
+//display fetched data
+	function printrepo(temp){
+		var para = document.createElement("ul");
+		var node = document.createTextNode(temp);
+		para.appendChild(node);
+		repo_field.appendChild(para);
+	}
+	document.getElementById('body-id').style.visibility="visible"
+	document.getElementById('loading-id').style.display="none"
+
+</script>
+</html>
